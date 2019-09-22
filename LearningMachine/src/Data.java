@@ -3,13 +3,13 @@ import java.lang.*;
 
 // Data type for the excels informations
 public class Data {
-	float bias;
-	float x;
-	float y;
-	float z;
+	int bias;
+	int x;
+	int y;
+	int z;
 	float targetvalue;
 	
-	Data(float x, float y, float z, float targetvalue) {
+	Data(int x, int y, int z, float targetvalue) {
 		this.bias = 1;
 		this.x = x;
 		this.y = y;
