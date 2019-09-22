@@ -3,7 +3,7 @@ import java.lang.*;
 
 public class Perceptron {
 	//float[] weights = new float[4];
-	float[] weights = {0, 0, 0, 0};
+	float[] weights = {-1, 0, 0, 0};
 	float learningrate = (float) 1;
 	
 	
@@ -24,19 +24,10 @@ public class Perceptron {
 			return 1;
 		} 
 		else {
-			return -1;
-		}
-	}
-	
-	int signerror(float n) {
-		if (n >= 0) {
-			return 1;
-		} 
-		else {
 			return 0;
 		}
 	}
-	
+
 	
 	int guess(float[] inputs) {
 		
@@ -56,10 +47,8 @@ public class Perceptron {
 		//System.out.println("guess = " + guess);
 		int error = (int) (target - guess);
 		if(guess == target) {
-			//System.out.println("VVVVVVVVVVVVVVVVVVVVVVVVVVVVVV");
 			pleasework = true;
 		} else {
-			//System.out.println("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX");
 			pleasework = false;
 		}
 		//Adjusts the weights according to the error
@@ -67,7 +56,7 @@ public class Perceptron {
 			weights[i] += error * (inputs[i])* learningrate;
 		}
 		
-		System.out.println("Current weights = " + Arrays.toString(weights));
+		//System.out.println("Current weights = " + Arrays.toString(weights));
 		return pleasework;
 		
 	}
