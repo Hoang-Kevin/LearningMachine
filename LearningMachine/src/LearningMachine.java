@@ -6,8 +6,8 @@ public class LearningMachine {
 		// Supervised learning process
 		Perceptron machine = new Perceptron();
 		Data[] datatable = new Data[92];
-		int counter = 0;
-		int successrate = 0;
+		float counter = 0;
+		float successrate = 0;
 		int retriescounter = 0;
 
 		datatable[ 0 ] = new Data( 4,3,5,-1 ) ;
@@ -113,7 +113,7 @@ public class LearningMachine {
 			for(int i = 0; i < datatable.length; i++) {
 				Boolean test;
 				float[] inputs = {datatable[i].bias,datatable[i].x,datatable[i].y,datatable[i].z};
-				datatable[i].showinfo();
+				//datatable[i].showinfo();
 				test = machine.train(inputs, datatable[i].targetvalue);
 				if(test == true) {
 					counter += 1;

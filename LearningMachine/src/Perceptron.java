@@ -3,7 +3,7 @@ import java.lang.*;
 
 public class Perceptron {
 	//float[] weights = new float[4];
-	float[] weights = {-147, -9, 5, 6};
+	float[] weights = {0, 0, 0, 0};
 	float learningrate = (float) 1;
 	
 	
@@ -28,6 +28,16 @@ public class Perceptron {
 		}
 	}
 	
+	int signerror(float n) {
+		if (n >= 0) {
+			return 1;
+		} 
+		else {
+			return 0;
+		}
+	}
+	
+	
 	int guess(float[] inputs) {
 		
 		// sum is the weighted sum
@@ -43,7 +53,7 @@ public class Perceptron {
 	Boolean train(float[] inputs, float target) {
 		Boolean pleasework;
 		int guess = guess(inputs);
-		System.out.println("guess = " + guess);
+		//System.out.println("guess = " + guess);
 		int error = (int) (target - guess);
 		if(guess == target) {
 			//System.out.println("VVVVVVVVVVVVVVVVVVVVVVVVVVVVVV");
