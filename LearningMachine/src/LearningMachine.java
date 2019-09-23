@@ -120,7 +120,7 @@ public class LearningMachine {
 		
 		
 		
-		while(successrate < 90) {
+		while(successrate < 92) {
 			for(int i = 0; i < datatable.length; i++) {
 				Boolean test;
 				int randomInteger = new Random().nextInt(101);;
