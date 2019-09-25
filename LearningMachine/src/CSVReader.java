@@ -2,25 +2,22 @@ import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.Arrays;
 
 public class CSVReader {
 	
-	float[][] Datafile = new float[100][3];
+	public String[] values;
 
 	
-	CSVReader() throws FileNotFoundException {
-		this.Reader();
-	}
-
-	void Reader() throws FileNotFoundException {
-		String currentdata;
-		CSVFile monFichier = new CSVFile("/Users/sazuchan/Desktop/Solution.csv"); 
-		for(int i = 0; i < 100; i++) {
-			for(int j = 0; j < 3; j++) {
-				currentdata = monFichier.getData(i, j);
-				Datafile[i][j] = Float.parseFloat(currentdata);
-			}
-			
+	CSVReader() throws IOException {
+		// TODO Auto-generated method stub
+		try (BufferedReader br = new BufferedReader(new FileReader("/Users/sazuchan/foo.csv"))) {
+		    String line;
+		    while ((line = br.readLine()) != null) {
+		        values = line.split(";");
+		        System.out.println(Arrays.deepToString(values));
+		       
+		    }
 		}
 		
 	}

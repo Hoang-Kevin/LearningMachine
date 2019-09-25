@@ -4,7 +4,7 @@ import java.lang.*;
 public class Perceptron {
 	//float[] weights = new float[4];
 	float[] weights = {-1, 0, 0, 0};
-	float learningrate = (float) 0.0000001;
+	float learningrate = (float) 1;
 	
 	
 	
